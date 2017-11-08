@@ -1,0 +1,9 @@
+use_frameworks!
+
+
+target 'PropertyFinder' do
+	pod 'Alamofire', '~> 4.5'
+	pod 'SwiftyBeaver'
+	pod 'ObjectMapper', '~> 3.0'
+	pod 'AlamofireImage', '~> 3.3'
+end
