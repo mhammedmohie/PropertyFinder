@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		071B7E84C3ED64F7802756D9 /* Pods_PropertyFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E9447280E02284889DC095 /* Pods_PropertyFinder.framework */; };
+		FA1D874C1FB42E43009ABC71 /* PropertiesListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D874B1FB42E43009ABC71 /* PropertiesListTests.swift */; };
 		FA262A491FB2E985003AD9C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA262A481FB2E985003AD9C3 /* AppDelegate.swift */; };
 		FA262A4B1FB2E985003AD9C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA262A4A1FB2E985003AD9C3 /* ViewController.swift */; };
 		FA262A4E1FB2E985003AD9C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA262A4C1FB2E985003AD9C3 /* Main.storyboard */; };
@@ -15,6 +16,12 @@
 		FA262A531FB2E985003AD9C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA262A511FB2E985003AD9C3 /* LaunchScreen.storyboard */; };
 		FA262A5E1FB2E986003AD9C3 /* PropertyFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA262A5D1FB2E986003AD9C3 /* PropertyFinderTests.swift */; };
 		FA262A691FB2E986003AD9C3 /* PropertyFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA262A681FB2E986003AD9C3 /* PropertyFinderUITests.swift */; };
+		FA43CE6D1FB38E0500B37356 /* ProprtyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43CE6C1FB38E0500B37356 /* ProprtyTableViewCell.swift */; };
+		FAF52F3F1FB3808A007E7DA0 /* PropertiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF52F3E1FB3808A007E7DA0 /* PropertiesListViewModel.swift */; };
+		FAF52F411FB380E4007E7DA0 /* PropertyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF52F401FB380E4007E7DA0 /* PropertyRouter.swift */; };
+		FAF52F431FB380ED007E7DA0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF52F421FB380ED007E7DA0 /* APIClient.swift */; };
+		FAF52F451FB380F7007E7DA0 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF52F441FB380F7007E7DA0 /* Strings.swift */; };
+		FAF52F471FB3819D007E7DA0 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF52F461FB3819D007E7DA0 /* Property.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +45,7 @@
 		28E9447280E02284889DC095 /* Pods_PropertyFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PropertyFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA82B7D04D7E3F16BA89D26 /* Pods-PropertyFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyFinder/Pods-PropertyFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		76E17E6010570C5EF6FD4F79 /* Pods-PropertyFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyFinder/Pods-PropertyFinder.release.xcconfig"; sourceTree = "<group>"; };
+		FA1D874B1FB42E43009ABC71 /* PropertiesListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesListTests.swift; sourceTree = "<group>"; };
 		FA262A451FB2E985003AD9C3 /* PropertyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA262A481FB2E985003AD9C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA262A4A1FB2E985003AD9C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +59,12 @@
 		FA262A641FB2E986003AD9C3 /* PropertyFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PropertyFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA262A681FB2E986003AD9C3 /* PropertyFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyFinderUITests.swift; sourceTree = "<group>"; };
 		FA262A6A1FB2E986003AD9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA43CE6C1FB38E0500B37356 /* ProprtyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProprtyTableViewCell.swift; sourceTree = "<group>"; };
+		FAF52F3E1FB3808A007E7DA0 /* PropertiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesListViewModel.swift; sourceTree = "<group>"; };
+		FAF52F401FB380E4007E7DA0 /* PropertyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyRouter.swift; sourceTree = "<group>"; };
+		FAF52F421FB380ED007E7DA0 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FAF52F441FB380F7007E7DA0 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		FAF52F461FB3819D007E7DA0 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +137,12 @@
 			children = (
 				FA262A481FB2E985003AD9C3 /* AppDelegate.swift */,
 				FA262A4A1FB2E985003AD9C3 /* ViewController.swift */,
+				FAF52F401FB380E4007E7DA0 /* PropertyRouter.swift */,
+				FAF52F421FB380ED007E7DA0 /* APIClient.swift */,
+				FAF52F461FB3819D007E7DA0 /* Property.swift */,
+				FAF52F441FB380F7007E7DA0 /* Strings.swift */,
+				FA43CE6C1FB38E0500B37356 /* ProprtyTableViewCell.swift */,
+				FAF52F3E1FB3808A007E7DA0 /* PropertiesListViewModel.swift */,
 				FA262A4C1FB2E985003AD9C3 /* Main.storyboard */,
 				FA262A4F1FB2E985003AD9C3 /* Assets.xcassets */,
 				FA262A511FB2E985003AD9C3 /* LaunchScreen.storyboard */,
@@ -135,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				FA262A5D1FB2E986003AD9C3 /* PropertyFinderTests.swift */,
+				FA1D874B1FB42E43009ABC71 /* PropertiesListTests.swift */,
 				FA262A5F1FB2E986003AD9C3 /* Info.plist */,
 			);
 			path = PropertyFinderTests;
@@ -346,8 +367,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA43CE6D1FB38E0500B37356 /* ProprtyTableViewCell.swift in Sources */,
+				FAF52F471FB3819D007E7DA0 /* Property.swift in Sources */,
 				FA262A4B1FB2E985003AD9C3 /* ViewController.swift in Sources */,
+				FAF52F411FB380E4007E7DA0 /* PropertyRouter.swift in Sources */,
 				FA262A491FB2E985003AD9C3 /* AppDelegate.swift in Sources */,
+				FAF52F431FB380ED007E7DA0 /* APIClient.swift in Sources */,
+				FAF52F451FB380F7007E7DA0 /* Strings.swift in Sources */,
+				FAF52F3F1FB3808A007E7DA0 /* PropertiesListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1D874C1FB42E43009ABC71 /* PropertiesListTests.swift in Sources */,
 				FA262A5E1FB2E986003AD9C3 /* PropertyFinderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HGQB6LL5EQ;
 				INFOPLIST_FILE = PropertyFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gohary.PropertyFinder;
@@ -530,6 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HGQB6LL5EQ;
 				INFOPLIST_FILE = PropertyFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gohary.PropertyFinder;
