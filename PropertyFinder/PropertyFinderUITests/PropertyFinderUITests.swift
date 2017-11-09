@@ -32,5 +32,33 @@ class PropertyFinderUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
+
+    func testListPaging() {
+
+        XCUIApplication().tables.element.swipeUp()
+        sleep(2)
+
+        XCUIApplication().tables.element.swipeUp()
+        sleep(2)
+
+        XCUIApplication().tables.element.swipeDown()
+        sleep(2)
+
+    }
+
+    func testSorting()  {
+
+        let app = XCUIApplication()
+        let sortItemsButton = app.navigationBars["PropertyFinder.View"].buttons["Sort Items"]
+        sortItemsButton.tap()
+
+        let dataSortingAlert = app.alerts["Data Sorting"]
+        dataSortingAlert.buttons["Bedrooms Ascending"].tap()
+        sortItemsButton.tap()
+        dataSortingAlert.buttons["Bedrooms Descending"].tap()
+        sortItemsButton.tap()
+        dataSortingAlert.buttons["Price Ascending"].tap()
+        sortItemsButton.tap()
+
+    }
 }

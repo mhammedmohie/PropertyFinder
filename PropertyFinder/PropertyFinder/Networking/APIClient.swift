@@ -11,9 +11,10 @@ import Alamofire
 
 class APIClient: NSObject {
     func fetchPropertiessList(forPage:Int,andSorting:SortingType , completion: @escaping ([[String:Any]]?, Error?) -> Void) {
+        log.debug(andSorting.rawValue)
+
         Alamofire.request(PropertyRouter.getList(forPage, andSorting.rawValue))
             .responseJSON { response in
-                print(andSorting.rawValue)
                 guard response.result.error == nil else {
                     completion(nil, response.result.error)
                     return
@@ -23,7 +24,7 @@ class APIClient: NSObject {
                     return
                 }
                 if let propertiesArray = json["res"] as? [[String:Any]]{
-
+                    log.debug(propertiesArray)
                     completion(propertiesArray, nil)
                 }
         }

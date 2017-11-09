@@ -109,7 +109,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UY7-KO-c8i"/>
+                    <navigationItem key="navigationItem" id="UY7-KO-c8i">
+                        <barButtonItem key="rightBarButtonItem" title="Sort Items" id="KXN-no-WKg">
+                            <connections>
+                                <action selector="sortBTNPressed:" destination="BYZ-38-t0r" id="hn7-9f-R8N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mlM-PW-8tO" id="7Df-T6-SHb"/>
                     </connections>

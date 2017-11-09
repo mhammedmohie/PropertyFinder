@@ -16,21 +16,19 @@ enum SortingType: String{
 }
 
 class PropertiesListViewModel: NSObject {
+
     var apiClient = APIClient()
     var properties = [Property]()
     var pageNom = 0
     var currentSorting :SortingType = .priceDescending
-    var loadingData = false
+    var isLoadingData = false
 
 
     func getProperties(completion: @escaping () -> Void) {
-        loadingData = true
+        isLoadingData = true
         apiClient.fetchPropertiessList(forPage: pageNom, andSorting:currentSorting) { (propertiesList, error) in
-            self.loadingData = false
+            self.isLoadingData = false
             if error == nil{
-
-
-
                 let propertiesObjects = propertiesList?.map({ (propertyData) -> Property in
                     return Property(JSON: propertyData)!
                 })
@@ -39,6 +37,17 @@ class PropertiesListViewModel: NSObject {
             }else{
                 log.debug(error ?? "gotError")
             }
+        }
+    }
+    func changeSortingTo(sorteType:SortingType, completion: @escaping () -> Void){
+        guard sorteType != currentSorting else {
+            return
+        }
+        pageNom = 0
+        properties = [Property]()
+        currentSorting = sorteType
+        getProperties {
+            completion()
         }
     }
 

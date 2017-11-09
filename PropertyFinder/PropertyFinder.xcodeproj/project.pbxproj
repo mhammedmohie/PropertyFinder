@@ -110,6 +110,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FA1D87901FB5134C009ABC71 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FAF52F401FB380E4007E7DA0 /* PropertyRouter.swift */,
+				FAF52F421FB380ED007E7DA0 /* APIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FA1D87911FB5135E009ABC71 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				FA262A4A1FB2E985003AD9C3 /* ViewController.swift */,
+				FAF52F461FB3819D007E7DA0 /* Property.swift */,
+				FA43CE6C1FB38E0500B37356 /* ProprtyTableViewCell.swift */,
+				FAF52F3E1FB3808A007E7DA0 /* PropertiesListViewModel.swift */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
 		FA262A3C1FB2E985003AD9C3 = {
 			isa = PBXGroup;
 			children = (
@@ -136,13 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				FA262A481FB2E985003AD9C3 /* AppDelegate.swift */,
-				FA262A4A1FB2E985003AD9C3 /* ViewController.swift */,
-				FAF52F401FB380E4007E7DA0 /* PropertyRouter.swift */,
-				FAF52F421FB380ED007E7DA0 /* APIClient.swift */,
-				FAF52F461FB3819D007E7DA0 /* Property.swift */,
+				FA1D87911FB5135E009ABC71 /* Properties */,
+				FA1D87901FB5134C009ABC71 /* Networking */,
 				FAF52F441FB380F7007E7DA0 /* Strings.swift */,
-				FA43CE6C1FB38E0500B37356 /* ProprtyTableViewCell.swift */,
-				FAF52F3E1FB3808A007E7DA0 /* PropertiesListViewModel.swift */,
 				FA262A4C1FB2E985003AD9C3 /* Main.storyboard */,
 				FA262A4F1FB2E985003AD9C3 /* Assets.xcassets */,
 				FA262A511FB2E985003AD9C3 /* LaunchScreen.storyboard */,

@@ -25,6 +25,42 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    @IBAction func sortBTNPressed(_ sender: Any) {
+
+        let alert = UIAlertController(title: "Data Sorting", message: "Please choose sorting method", preferredStyle: UIAlertControllerStyle.alert)
+
+        alert.addAction(UIAlertAction(title: "Bedrooms Ascending", style: .default, handler: { (action) in
+            self.propertiesListVM.changeSortingTo(sorteType: .bedroomsAssending, completion: {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Bedrooms Descending", style: .default, handler: { (action) in
+            self.propertiesListVM.changeSortingTo(sorteType: .bedroomsDescending, completion: {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Price Ascending", style: .default, handler: { (action) in
+            self.propertiesListVM.changeSortingTo(sorteType: .priceAscending, completion: {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Price Descending", style: .default, handler: { (action) in
+            self.propertiesListVM.changeSortingTo(sorteType: .priceDescending, completion: {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }))
+        self.present(alert, animated: true, completion: nil)
+
+    }
 }
 
 extension ViewController:UITableViewDelegate, UITableViewDataSource{
@@ -50,7 +86,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource{
      func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         log.debug(indexPath.row)
         if Double(indexPath.row) > 0.8 * Double(propertiesListVM.properties.count)
-            && !propertiesListVM.loadingData{
+            && !propertiesListVM.isLoadingData{
             propertiesListVM.loadNextPage {
                 self.tableView.reloadData()
             }
