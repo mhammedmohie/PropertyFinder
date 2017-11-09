@@ -16,7 +16,7 @@ class PropertiesListTests: XCTestCase {
     func testPropertiesListAPI() {
 
         let expectations = expectation(description: "The Response result match the expected results")
-        client.fetchPropertiessList(forPage: 0) { (list, error) in
+        client.fetchPropertiessList(forPage: 0, andSorting:.bedroomsAssending) { (list, error) in
             guard (list != nil) && (list!.count > 0) else{
                 return XCTFail("failed to get properties from API")
             }
@@ -32,7 +32,7 @@ class PropertiesListTests: XCTestCase {
         let expectations = expectation(description: "The Response result match the expected results")
 
         viewModel.getProperties {
-            guard (self.viewModel.properties != nil) && (self.viewModel.properties!.count > 0) else{
+            guard self.viewModel.properties.count > 0 else{
                 return XCTFail("failed to map properties from API")
             }
             expectations.fulfill()

@@ -10,9 +10,10 @@ import UIKit
 import Alamofire
 
 class APIClient: NSObject {
-    func fetchPropertiessList(forPage:Int, completion: @escaping ([[String:Any]]?, Error?) -> Void) {
-        Alamofire.request(PropertyRouter.getList(0, "bd"))
+    func fetchPropertiessList(forPage:Int,andSorting:SortingType , completion: @escaping ([[String:Any]]?, Error?) -> Void) {
+        Alamofire.request(PropertyRouter.getList(forPage, andSorting.rawValue))
             .responseJSON { response in
+                print(andSorting.rawValue)
                 guard response.result.error == nil else {
                     completion(nil, response.result.error)
                     return

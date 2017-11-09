@@ -8,12 +8,25 @@
 
 import UIKit
 
+enum SortingType: String{
+    case bedroomsAssending  = "ba"
+    case bedroomsDescending = "bd"
+    case priceAscending     = "pa"
+    case priceDescending    = "pd"
+}
+
 class PropertiesListViewModel: NSObject {
     var apiClient = APIClient()
-    var properties: [Property]?
+    var properties = [Property]()
+    var pageNom = 0
+    var currentSorting :SortingType = .priceDescending
+    var loadingData = false
+
+
     func getProperties(completion: @escaping () -> Void) {
-        
-        apiClient.fetchPropertiessList(forPage: 0) { (propertiesList, error) in
+        loadingData = true
+        apiClient.fetchPropertiessList(forPage: pageNom, andSorting:currentSorting) { (propertiesList, error) in
+            self.loadingData = false
             if error == nil{
 
 
@@ -21,11 +34,18 @@ class PropertiesListViewModel: NSObject {
                 let propertiesObjects = propertiesList?.map({ (propertyData) -> Property in
                     return Property(JSON: propertyData)!
                 })
-                self.properties = propertiesObjects
+                self.properties.append(contentsOf:propertiesObjects!)
                 completion()
             }else{
                 log.debug(error ?? "gotError")
             }
+        }
+    }
+
+    func loadNextPage(completion: @escaping () -> Void){
+        pageNom += 1
+            getProperties {
+                completion()
         }
     }
 

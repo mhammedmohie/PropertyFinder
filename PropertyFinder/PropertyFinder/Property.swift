@@ -24,6 +24,5 @@ class Property: Mappable {
         subject         <- map["subject"]
         bedrooms        <- map["bedrooms"]
         thumbnail       <- map["thumbnail"]
-
     }
 }

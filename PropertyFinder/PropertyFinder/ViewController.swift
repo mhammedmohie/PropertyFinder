@@ -30,10 +30,10 @@ class ViewController: UIViewController {
 extension ViewController:UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "propertyCell", for: indexPath) as! ProprtyTableViewCell
-        guard let propertyObj  = propertiesListVM.properties? [indexPath.row]  else {
-            return cell
-        }
+
+        let propertyObj  = propertiesListVM.properties [indexPath.row]
         cell.propertyBedsLBL.text = propertiesListVM.propertyBedRooms(property: propertyObj)
         cell.propertyPriceLBL.text = propertiesListVM.propertyPrice(property: propertyObj)
         cell.propertyTitleLBL.text = propertiesListVM.propertyTitle(property: propertyObj)
@@ -44,10 +44,17 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let properties = propertiesListVM.properties else {
-            return 0
+        return propertiesListVM.properties.count
+    }
+
+     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        log.debug(indexPath.row)
+        if Double(indexPath.row) > 0.8 * Double(propertiesListVM.properties.count)
+            && !propertiesListVM.loadingData{
+            propertiesListVM.loadNextPage {
+                self.tableView.reloadData()
+            }
         }
-        return properties.count
     }
 }
 
