@@ -35,8 +35,11 @@ class PropertyFinderUITests: XCTestCase {
     }
 
     func testListPaging() {
+        let app = XCUIApplication()
 
-        XCUIApplication().tables.element.swipeUp()
+        app.tables.element.swipeUp()
+        setupSnapshot(app)
+
         sleep(2)
         snapshot("loading-FirstScreen")
         XCUIApplication().tables.element.swipeUp()
