@@ -1,0 +1,7 @@
+scheme "PropertyFinder"
+devices ["iPhone 6s"]
+
+clean true
+code_coverage true
+
+output_types "html"
